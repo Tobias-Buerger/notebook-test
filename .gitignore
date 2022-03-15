@@ -1,0 +1,9 @@
+# Mac-specific files
+.DS_Store
+
+# Tool-specific files
+**/.ipynb_checkpoints/
+**/__pycache__/
+
+# files in folders beginning with "."
+notebooks/.*/**
