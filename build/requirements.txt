@@ -15,6 +15,7 @@ yapf
 svglib
 git+https://github.com/uds-se/pyan#egg=pyan
 nbdime
+svg42pdf
 
 beautifulsoup4>=4.9.3
 diff_match_patch>=20200713
