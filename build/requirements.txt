@@ -17,6 +17,9 @@ git+https://github.com/uds-se/pyan#egg=pyan
 nbdime
 svg42pdf
 
+# not defined but needed
+testpath
+
 beautifulsoup4>=4.9.3
 diff_match_patch>=20200713
 easyplotly>=0.1.3

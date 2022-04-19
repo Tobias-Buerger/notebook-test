@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:22.04
 
 # global config
 ENV TZ=Europe/Berlin
@@ -41,7 +41,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     firefox \
     latexmk \
     cargo
-RUN pip3 -qq install pip --upgrade
+RUN pip3.10 -qq install pip --upgrade
 
 # install extra fonts (from ubuntu:21.10 because newest version does not have raleway font)
 # need to patch version info to 2021.20210921
@@ -71,7 +71,7 @@ RUN useradd -s /bin/bash -m user
 # preparing requirements for jupyter and other build requirements 
 RUN mkdir /build && chown user:user /build
 COPY --chown=user:user ./build /build
-RUN pip3 install -r /build/requirements.txt
+RUN pip3.10 install -r /build/requirements.txt
 
 # preparing working directory
 RUN mkdir -p ${NOTEBOOK_DIR} && chown user:user ${NOTEBOOK_DIR}
