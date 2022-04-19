@@ -6,4 +6,7 @@
 **/__pycache__/
 
 # files in folders beginning with "."
-notebooks/.*/**
+**/.*/**
+
+# ignore notebook build
+**/_build
