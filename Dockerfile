@@ -34,10 +34,19 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 # creating non root user
 RUN useradd -s /bin/bash -m user
 
-# preparing requirements
+# preparing files needed for docker
 RUN mkdir /build && chown user:user /build
 COPY --chown=user:user ./info1-book/requirements.txt /build/requirements.txt
+COPY --chown=user:user ./docker-files /build
+
+# install pip requirements for building the book
 RUN pip3.10 install -r /build/requirements.txt
+
+# prepare Uni Freiburg specific tex files
+RUN unzip /build/ufcd.tds.zip -d /usr/local/share/texmf && \
+    unzip /build/ufcd-logo-uni.tds.zip -d /usr/local/share/texmf && \
+    unzip /build/ufcd-logo-iif.tds.zip -d /usr/local/share/texmf && \
+    texhash
 
 # preparing working directory
 RUN mkdir -p ${WORK_DIR} && chown user:user ${WORK_DIR}
