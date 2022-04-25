@@ -17,12 +17,14 @@ Samstag, 12.2.2022
 * Eingeschränkt im Geb. 101, Hörsaal 00-026
 * Online per Livestream (siehe Webseite)
 
-+++
-
 ### Präsenz
 * Kapazität des Hörsaals: 150
   Personen mit 3G und Maske (Stand 18.10.21)
 * Zugang geregelt durch **Endziffer der Matrikelnummer**
+```{revealjs-break}
+```
+```{revealjs-fragments}
 * Keine Anmeldung erforderlich
 * Pro Vorlesungstermin: Zwei Endziffern garantiert (siehe Webseite)
 * Anpassung gemäß Füllungsgrad
+```
