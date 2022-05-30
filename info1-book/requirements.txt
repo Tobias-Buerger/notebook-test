@@ -2,3 +2,4 @@ jupyter-book
 sphinx_revealjs
 matplotlib
 numpy
+jupytext
