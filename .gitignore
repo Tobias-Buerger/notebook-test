@@ -5,8 +5,5 @@
 **/.ipynb_checkpoints/
 **/__pycache__/
 
-# files in folders beginning with "."
-**/.*/**
-
 # ignore notebook build
 **/_build
