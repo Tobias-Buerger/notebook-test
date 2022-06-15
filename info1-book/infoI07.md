@@ -30,13 +30,21 @@ Kryptographie, fehlerkorrigierende Codes
 
 #### Rechenoperationen auf Polynomen
 - (Skalar) Multiplikation mit einer Zahl c 
-$ c \cdot (a_0,a_1,...,a_n) = (c \cdot a_0, c \cdot a_1,...,c \cdot a_n) $
+```{math}
+  c \cdot (a_0,a_1,...,a_n) = (c \cdot a_0, c \cdot a_1,...,c \cdot a_n) 
+```
 - Auswertung an einer Stelle $x_0$ 
-$ (a_0,a_1,...,a_n)[x_0] = \sum_{i=0}^n a_i \cdot x_0^i $
+```{math}
+  (a_0,a_1,...,a_n)[x_0] = \sum_{i=0}^n a_i \cdot x_0^i  
+```
 - Ableitung 
-$ (a_0,a_1,...,a_n)' = (1 \cdot a_0, 2 \cdot a_1,..., n \cdot a_n)$
+```{math}
+  (a_0,a_1,...,a_n)' = (1 \cdot a_0, 2 \cdot a_1,..., n \cdot a_n) 
+```
 - Integration 
-$ \int (a_0,a_1,...,a_n) = (0,a_0,a_1/2,a_2/3...,a_n/(n+1)) $
+```{math}
+  \int (a_0,a_1,...,a_n) = (0,a_0,a_1/2,a_2/3...,a_n/(n+1)) 
+```
 
 ### Skalarmultiplikation
 $ c \cdot (a_0,a_1,...,a_n) = (c \cdot a_0, c \cdot a_1,...,c \cdot a_n) $
