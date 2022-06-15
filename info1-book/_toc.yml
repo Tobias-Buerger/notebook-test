@@ -6,4 +6,5 @@ root: home
 chapters:
 - file: organisation
 - file: grundlagen
+numbered : true
 - file: infoI07
