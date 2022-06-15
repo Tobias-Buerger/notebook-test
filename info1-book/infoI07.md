@@ -634,12 +634,12 @@ Beispielfunktion: $f(x) = x^3 - 6x^2 + 11x - 6
 
 #### Schritt 3: Beispiele
 für p = [-6, 11, -6, 1] sollen:
-newton (p, 0)   == approx(1)
-newton (p, 1.1) == approx(1)
-newton (p, 1.7) == approx(2)
-newton (p, 2.5) == approx(1)
-newton (p, 2.7) == approx(3)
-newton (p, 10)  == approx(3)
+  - newton (p, 0)   == approx(1)
+  - newton (p, 1.1) == approx(1)
+  - newton (p, 1.7) == approx(2)
+  - newton (p, 2.5) == approx(1)
+  - newton (p, 2.7) == approx(3)
+  - newton (p, 10)  == approx(3)
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
@@ -698,13 +698,30 @@ $\textbf{Warum while?}$
       Anzahl der Elemente in der Sequenz seq
     - for i in range(...):
       Größe des Range
-  - Daher $\textcoloer{red}{terminiert}$ die Ausführung einer for-Schleife i.a.
-  - Bei einer while-Schleife ist die Anzahl der Durchläufe $\textcolor{red}{nicht a-priori klar}$.
+  - Daher $\textcolor{red}{terminiert}$ die Ausführung einer for-Schleife i.a.
+  - Bei einer while-Schleife ist die Anzahl der Durchläufe $\textcolor{red}{nicht\,a-priori\,klar}$.
   - Daher ist stets einer Überlegung erforderlich, ob eine while-Schleife terminiert ($\textcolor{red}{Terminationsbedingung}$).
   - Die Terminationsbedingung $\textcolor{red}{muss}$ im Programm z.B. als Kommenatr dokumentiert werden.
 
 #### Beispiel Zweierlogarithmus (Terminationsbedingung)
-!!!
+$\textcolor{blue}{Zweierlogarithmus}$
+```{math}
+  \begin{align*}
+    log_2 a &= b \\
+    2^b &= a \\
+    a &> 0
+  \end{align*}
+```
+
+$\textcolor{blue}{für\,ganze\,Zahlen}$
+```{math}
+  \begin{align*}
+    l2(n) &= m \\
+    m &= \lfloor \log_2 n \rfloor \\
+    n &> 0
+  \end{align*}
+```
+
 
 ##### Implementierung Zweierlogarithmus
 ```{code-cell} ipython3
@@ -723,7 +740,7 @@ $\textbf{Warum while?}$
 ## Zusammenfassung
   - Funktionen über $\textcolor{red}{Sequenzen}$ verwenden $\textcolor{red}{for-in-Schleifen}$.
   - Ergebnisse werden meist in einer $\textcolor{red}{Akkumulator}$ Variable berechnet.
-  - Funktionen über $\textcolor{red}{mehreren Sequenzen}$ verwenden $\textcolor{red}{for-range-Schleifen}$.
+  - Funktionen über $\textcolor{red}{mehreren\,Sequenzen}$ verwenden $\textcolor{red}{for-range-Schleifen}$.
   - Der verwendete Range hängt von der Problemstellung ab.
   - Nicht-triviale Teilprobleme werden in Hilfsfunktionen ausgelagert.
   - while-Schleifen werden verwendet, wenn die Anzahl der
@@ -731,4 +748,4 @@ $\textbf{Warum while?}$
     typischerweise
     - zur Verarbeitung von Eingaben
     - zur Berechnung von Approximationen
-  - Jede while-Schleife muss eine $\textcolor{red}{dokumentierte Terminationsbedingung}$ haben.
+  - Jede while-Schleife muss eine $\textcolor{red}{dokumentierte\,Terminationsbedingung}$ haben.
