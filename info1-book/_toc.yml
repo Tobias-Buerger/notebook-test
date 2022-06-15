@@ -3,12 +3,7 @@
 
 format: jb-book
 root: home
-parts:
-- caption: Organisation
-  chapters:
-  - file: organisation
-  - file: grundlagen
-- caption: Inhalt
-  numbered: true
-  chapters:
-  - file: infoI07
+chapters:
+- file: organisation
+- file: grundlagen
+- file: infoI07
