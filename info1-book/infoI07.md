@@ -55,46 +55,49 @@ Die Funktion $\textcolor{red}{skalar\_mult}$ nimmt als Eingabe
 Der Grad des Polynoms ergibt sich aus der Länge der Sequenz.
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def skalar_mult(c: complex, p: list[complex])-> list[complex]:
-    # fill in, initialization
-    for a in p:
-        pass # fill in action for each element
-    return 
+```python
+def skalar_mult(c: complex, p: list[complex])-> list[complex]:
+  # fill in, initialization
+  for a in p:
+      pass # fill in action for each element
+  return 
 ```
 
 #### Schritt 3: Beispiele
 Es soll
-  - skalar_mult(42,[]) == []
-  - skalar_mult(42, [1,2,3]) == [42,84,126]
-  - skalar_mult(-0.1, [1,2,3]) == [-0.1,-0.2,-0.3]
+```python
+skalar_mult(42,[]) == []
+skalar_mult(42, [1,2,3]) == [42,84,126]
+skalar_mult(-0.1, [1,2,3]) == [-0.1,-0.2,-0.3]
+```
 sein. 
 
 Daraus wird dann die Funktionsdefinition erarbeitet.
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def skalar_mult(c: complex, p: list[complex])-> list[complex]:
-    result = []
-    for a in p:
-        result = result + [c * a]
-    return result
+def skalar_mult(c: complex, p: list[complex])-> list[complex]:
+  result = []
+  for a in p:
+      result = result + [c * a]
+  return result
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  :tags: ["raises-exception"]
-  assert skalar_mult(42,[]) == [] 
-  assert skalar_mult(42, [1,2,3]) == [42,84,126] 
-  assert skalar_mult(-0.1, [1,2,3]) == [-0.1,-0.2,-0.3]  
+:tags: ["raises-exception"]
+assert skalar_mult(42,[]) == [] 
+assert skalar_mult(42, [1,2,3]) == [42,84,126] 
+assert skalar_mult(-0.1, [1,2,3]) == [-0.1,-0.2,-0.3]
 ```
 
 > $\textbf{Muster: }$ Akkumulator
 ##### Rumpf der Skalarmultiplikation
-
-    for a in p:
-      result = result + [c * a]
-    return result
+```python
+for a in p:
+  result = result + [c * a]
+return result
+```
 
 Variable result ist Akkumulator
   - In result wird das Ergebnis aufgesammelt (akkumuliert)
@@ -111,48 +114,50 @@ Die Funktion $\textcolor{red}{poly\_eval}$ nimmt als Eingabe
 Der Grad des Polynoms ergibt sich aus der Länge der Sequenz.
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def poly_eval(p: list[complex], x: complex)-> complex:
-    result = []
-    for a in p:
-        pass
-    return 
+```python
+def poly_eval(p: list[complex], x: complex)-> complex:
+  result = []
+  for a in p:
+      pass
+  return
 ```
 
 #### Schritt 3: Beispiele
 Es soll gelten:
-  - poly_eval([], 2) == 0
-  - poly_eval([1,2,3], 2) == 17
-  - poly_eval([1,2,3], -0.1) == 0.83
+```python
+poly_eval([], 2) == 0
+poly_eval([1,2,3], 2) == 17
+poly_eval([1,2,3], -0.1) == 0.83
+```
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def poly_eval(p: list[complex], x: complex)-> complex:
-    result = 0
-    i = 0
-    for a in p:
-        result = result + a * x ** i
-        i = i + 1
-    return result
+def poly_eval(p: list[complex], x: complex)-> complex:
+  result = 0
+  i = 0
+  for a in p:
+      result = result + a * x ** i
+      i = i + 1
+  return result
 ```
 
 #### Schritt 4: Alternative Funktionsdefinition
 ```{code-cell} ipython3
-  def poly_eval(p: list[complex], x: complex)-> complex:
-    result = 0
-    for i, a in enumerate(p): # <<---
-        result = result + a * x ** i
-    return result
+def poly_eval(p: list[complex], x: complex)-> complex:
+  result = 0
+  for i, a in enumerate(p): # <<---
+      result = result + a * x ** i
+  return result
 ```
 - enumerate(seq) liefert Paare aus (Laufindex, Element)
 - Beispiel list(enumerate([8,8,8])) == [(0,8), (1,8), (2,8)]
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  :tags: ["raises-exception"]
-  assert poly_eval([], 2) == 0 
-  assert poly_eval([1, 2, 3], 2) == 17 
-  assert poly_eval([1,2,3], -0.1) == 0.83 
+:tags: ["raises-exception"]
+assert poly_eval([], 2) == 0 
+assert poly_eval([1, 2, 3], 2) == 17 
+assert poly_eval([1,2,3], -0.1) == 0.83 
 ```
 
 ### Ableitung
@@ -165,36 +170,38 @@ Die Funktion $\textcolor{red}{derivative}$ nimmt als Eingabe
 Der Grad des Polynoms ergibt sich aus der Länge der Sequenz.
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def derivative(p: list[complex]) -> list[complex]:
-    #initialization
-    for a in p:
-      pass # fill in action for each element
-    return
+```python
+def derivative(p: list[complex]) -> list[complex]:
+  #initialization
+  for a in p:
+    pass # fill in action for each element
+  return
 ```
 
 #### Schritt 3: Beispiele
 Es soll gelten:
-  - derivative([]) == []
-  - derivative([42]) == []
-  - derivative([1,2,3]) == [2,6]
+```python
+derivative([]) == []
+derivative([42]) == []
+derivative([1,2,3]) == [2,6]
+```
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def derivative(p: list[complex]) -> list[complex]:
-    result = []
-    for i, a in enumerate(p):
-      if i > 0:
-        result = result + [i * a]
-    return result
+def derivative(p: list[complex]) -> list[complex]:
+  result = []
+  for i, a in enumerate(p):
+    if i > 0:
+      result = result + [i * a]
+  return result
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  :tags: ["raises-exception"]
-  assert derivative([]) == [] 
-  assert derivative([42]) == []
-  assert derivative([1,2,3]) == [2,6] 
+:tags: ["raises-exception"]
+assert derivative([]) == [] 
+assert derivative([42]) == []
+assert derivative([1,2,3]) == [2,6] 
 ```
 
 ### Integration
@@ -229,12 +236,12 @@ Die Grade der Polynome ergeben sich aus der Länge der Sequenzen.
   Die Grade der Polynome können unterschiedlich sein!
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def poly_add(p: list[complex], q: list[complex]) -> list[complex]:
-    # fill in
-    for i in range(...): # <<---
-      pass # fill in action for each element
-    return 
+```python
+def poly_add(p: list[complex], q: list[complex]) -> list[complex]:
+  # fill in
+  for i in range(...): # <<---
+    pass # fill in action for each element
+  return
 ```
 
 > $\textbf{Frage:}$  
@@ -242,30 +249,32 @@ Was ist das Argument ... von range?
 
 #### Schritt 3: Beispiele
 Es soll gelten:
-  - poly_add([], []) == []
-  - poly_add([42], []) == [42]
-  - poly_add([], [11]) == [11]
-  - poly_add([1,2,3], [4,3,2,5,5]) == [5,5,5,5,5]
+```python
+poly_add([], []) == []
+poly_add([42], []) == [42]
+poly_add([], [11]) == [11]
+poly_add([1,2,3], [4,3,2,5,5]) == [5,5,5,5,5]
+```
 
 > $\textbf{Antwort: }$ Argument von range
 maxlen = max(len(p), len(q))
 
 #### Schritt 4: Funktionsdefinition, erster Versuch
 ```{code-cell} ipython3
-  def poly_add(p:list[complex], q: list[complex]) -> list[complex]:
-    maxlen = max(len(p), len(q))
-    result = []
-    for i in range(maxlen):
-      result = result + [p[i] + q[i]]
-    return result
+def poly_add(p:list[complex], q: list[complex]) -> list[complex]:
+  maxlen = max(len(p), len(q))
+  result = []
+  for i in range(maxlen):
+    result = result + [p[i] + q[i]]
+  return result
 ```
 
 ```{code-cell} ipython3
-  :tags: ["raises-exception"]
-  assert poly_add([], []) == []
-  assert poly_add([42], []) == [42]
-  assert poly_add([], [11]) == [11]
-  assert poly_add([1,2,3], [4,3,2,5,5]) == [5,5,5,5,5]
+:tags: ["raises-exception"]
+assert poly_add([], []) == []
+assert poly_add([42], []) == [42]
+assert poly_add([], [11]) == [11]
+assert poly_add([1,2,3], [4,3,2,5,5]) == [5,5,5,5,5]
 ```
 
 > $\textbf{Problem: }$
@@ -292,51 +301,53 @@ $\textbf{Sichere Indizierung | Addition}$
 ##### Hilfsfunktion Schritt 2
 Funktionsgerüst
 ```{code-cell} ipython3
-  def safe_index(p: list[complex], i: int, d: complex) -> complex:
-    # fill in
-    return 0
+def safe_index(p: list[complex], i: int, d: complex) -> complex:
+  # fill in
+  return 0
 ```
 
 ##### Hilfsfunktion Schritt 3
 Es soll gelten:
-  - safe_index([1,2,3], 0, 0) == 1
-  - safe_index([1,2,3], 2, 0) == 3
-  - safe_index([1,2,3], 4, 0) == 0
-  - safe_index([1,2,3], 4, 42) == 42
-  - safe_index([], 0, 42) == 42
+```python
+safe_index([1,2,3], 0, 0) == 1
+safe_index([1,2,3], 2, 0) == 3
+safe_index([1,2,3], 4, 0) == 0
+safe_index([1,2,3], 4, 42) == 42
+safe_index([], 0, 42) == 42
+```
 
 ##### Hilfsfunktion Schritt 4
 Funktionsdefinition
 ```{code-cell} ipython3
-  def safe_index(p: list[complex], i: int, d: complex) -> complex:
-    return p[i] if i < len(p) else d
+def safe_index(p: list[complex], i: int, d: complex) -> complex:
+  return p[i] if i < len(p) else d
 ```
 oder (alternative Implementierung des Funktionsrumpfes)
 ```{code-cell} ipython3
-  def safe_index(p: list[complex], i: int, d: complex) -> complex:
-    if i < len(p):
-      return p[i]
-    else:
-      return d
+def safe_index(p: list[complex], i: int, d: complex) -> complex:
+  if i < len(p):
+    return p[i]
+  else:
+    return d
 ```
 
 #### Schritt 4: Funktionsdefinition mit Hilfsfunktion
 ```{code-cell} ipython3
-  def poly_add(p: list[complex], q: list[complex]) -> list[complex]:
-    maxlen = max(len(p), len(q))
-    result = []
-    for i in range(maxlen):
-      result = result + [safe_index(p,i,0) + safe_index(q,i,0)]
-    return result
+def poly_add(p: list[complex], q: list[complex]) -> list[complex]:
+  maxlen = max(len(p), len(q))
+  result = []
+  for i in range(maxlen):
+    result = result + [safe_index(p,i,0) + safe_index(q,i,0)]
+  return result
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  assert safe_index([1,2,3], 0, 0) == 1
-  assert safe_index([1,2,3], 2, 0) == 3
-  assert safe_index([1,2,3], 4, 0) == 0
-  assert safe_index([1,2,3], 4, 42) == 42
-  assert safe_index([], 0, 42) == 42
+assert safe_index([1,2,3], 0, 0) == 1
+assert safe_index([1,2,3], 2, 0) == 3
+assert safe_index([1,2,3], 4, 0) == 0
+assert safe_index([1,2,3], 4, 42) == 42
+assert safe_index([], 0, 42) == 42
 ```
 
 
@@ -364,33 +375,35 @@ und liefert als Ergebnis das Produkt der Eingaben.
 
 #### Schritt 2: Funktionsgerüst
 ```{code-cell} ipython3
-  def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
-    # fill in
-    for k in range(...):
-      pass # fill in to compute k-th output element
-    return
+def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
+  # fill in
+  for k in range(...):
+    pass # fill in to compute k-th output element
+  return
 ```
 
 #### Schritt 3: Beispiele 
 Es soll gelten:
-  - poly_mult([],[]) == []
-  - poly_mult([42],[]) == []
-  - poly_mult([],[11]) == []
-  - poly_mult([1,2,3],[1]) == [1,2,3]
-  - poly_mult([1,2,3],[0,1]) == [0,1,2,3]
-  - poly_mult([1,2,3],[1,1]) == [1,3,5,3]
+```python
+poly_mult([],[]) == []
+poly_mult([42],[]) == []
+poly_mult([],[11]) == []
+poly_mult([1,2,3],[1]) == [1,2,3]
+poly_mult([1,2,3],[0,1]) == [0,1,2,3]
+poly_mult([1,2,3],[1,1]) == [1,3,5,3]
+```
 
 > $\textbf{Beobachtungen: }$
 Range: maxlen = len(p) + len(q) - 1
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
-    result = []
-    for k in range(len(p) + len(q) - 1):
-      rk = ... #k-th output element
-      result = result + [rk]
-    return result
+def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
+  result = []
+  for k in range(len(p) + len(q) - 1):
+    rk = ... #k-th output element
+    result = result + [rk]
+  return result
 ```
 
 
@@ -398,32 +411,33 @@ Range: maxlen = len(p) + len(q) - 1
 $ r_k = \sum_{i=0}^k p_i \cdot q_{k-i} $ Noch eine Schleife!
 
 ##### Berechnung 
-    rk = 0
-    for i in range(k+1):
-      rk = rk + (safe_index(p,i,0) * safe_index(q,k-i,0))
-
+```python
+rk = 0
+for i in range(k+1):
+  rk = rk + (safe_index(p,i,0) * safe_index(q,k-i,0))
+```
 
 finale Funktionsdefinition
 
 ```{code-cell} ipython3
-  def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
-    result = []
-    for k in range(len(p) + len(q) - 1):
-      rk = 0
-      for i in range(k+1):
-        rk = rk + (safe_index(p,i,0) * safe_index(q,k-i,0))
-      result = result + [rk]
-    return result
+def poly_mult(p: list[complex], q: list[complex]) -> list[complex]:
+  result = []
+  for k in range(len(p) + len(q) - 1):
+    rk = 0
+    for i in range(k+1):
+      rk = rk + (safe_index(p,i,0) * safe_index(q,k-i,0))
+    result = result + [rk]
+  return result
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  assert poly_mult([],[]) == []
-  assert poly_mult([42],[]) == []
-  assert poly_mult([],[11]) == []
-  assert poly_mult([1,2,3],[1]) == [1,2,3]
-  assert poly_mult([1,2,3],[0,1]) == [0,1,2,3]
-  assert poly_mult([1,2,3],[1,1]) == [1,3,5,3]
+assert poly_mult([],[]) == []
+assert poly_mult([42],[]) == []
+assert poly_mult([],[11]) == []
+assert poly_mult([1,2,3],[1]) == [1,2,3]
+assert poly_mult([1,2,3],[0,1]) == [0,1,2,3]
+assert poly_mult([1,2,3],[1,1]) == [1,3,5,3]
 ```
 
 ### Lexikografische Ordnung
@@ -446,51 +460,53 @@ Die Funktion $\textcolor{red}{lex\_leq}$ nimmt als Eingabe
 und liefert als Ergebnis True falls $a \le b$ sonst False.
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def lex_leq(a: list, b: list) -> bool:
-    # fill in
-    for k in range(...):
-      pass # fill in
-    return ...
+```python
+def lex_leq(a: list, b: list) -> bool:
+  # fill in
+  for k in range(...):
+    pass # fill in
+  return ...
 ```
 
 #### Schritt 3: Beispiele
 Es soll gelten:
-  - lex_leq([], []) == True
-  - lex_leq([42], []) == False
-  - lex_leq([], [11]) == True
-  - lex_leq([1,2,3], [1]) == False
-  - lex_leq([1], [1,2,3]) == True
-  - lex_leq([1,2,3], [0,1]) == False
-  - lex_leq([1,2,3], [1,3]) == True
-  - lex_leq([1,2,3], [1,2,3]) == True
+```python
+lex_leq([], []) == True
+lex_leq([42], []) == False
+lex_leq([], [11]) == True
+lex_leq([1,2,3], [1]) == False
+lex_leq([1], [1,2,3]) == True
+lex_leq([1,2,3], [0,1]) == False
+lex_leq([1,2,3], [1,3]) == True
+lex_leq([1,2,3], [1,2,3]) == True
+```
 
 > $\textbf{Beobachtungen: }$
 Range minlen = min (len(a), len(b))
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def lex_leq(a: list, b: list) -> bool:
-    minlen = min (len (a), len (b))
-    for k in range(minlen):
-        if a[k] < b[k]:
-            return True
-        if a[k] > b[k]:
-            return False
-    # a is prefix of b or vice versa
-    return len(a) <= len(b)
+def lex_leq(a: list, b: list) -> bool:
+  minlen = min (len (a), len (b))
+  for k in range(minlen):
+      if a[k] < b[k]:
+          return True
+      if a[k] > b[k]:
+          return False
+  # a is prefix of b or vice versa
+  return len(a) <= len(b)
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  assert lex_leq([], []) == True
-  assert lex_leq([42], []) == False
-  assert lex_leq([], [11]) == True
-  assert lex_leq([1,2,3], [1]) == False
-  assert lex_leq([1], [1,2,3]) == True
-  assert lex_leq([1,2,3], [0,1]) == False
-  assert lex_leq([1,2,3], [1,3]) == True
-  assert lex_leq([1,2,3], [1,2,3]) == True
+assert lex_leq([], []) == True
+assert lex_leq([42], []) == False
+assert lex_leq([], [11]) == True
+assert lex_leq([1,2,3], [1]) == False
+assert lex_leq([1], [1,2,3]) == True
+assert lex_leq([1,2,3], [0,1]) == False
+assert lex_leq([1,2,3], [1,3]) == True
+assert lex_leq([1,2,3], [1,2,3]) == True
 ```
 
 
@@ -543,12 +559,12 @@ Die Anweisungen im Block werden wiederholt, solange die Bedingung keinen nullwer
 Die Funktion $\textcolor{red}{input\_list}$ nimmt keine Parameter, erwartet eine beliebig lange folge von Eingaben, die mit einer leeren Zeile abgeschlossen ist, und liefert als Ergebnis die Liste dieser Eingaben als Strings.
 
 #### Schritt 2: Funktionsgerüst
-```{code-cell} ipython3
-  def input_list() -> list[str]:
-    # fill in, initialization
-    while expr_cond:
-      pass # fill in
-    return 
+```python
+def input_list() -> list[str]:
+  # fill in, initialization
+  while expr_cond:
+    pass # fill in
+  return 
 ```
 
 $\textbf{Warum while?}$
@@ -571,13 +587,13 @@ $\textbf{Warum while?}$
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  def input_list() -> list[str]:
-    result = []
+def input_list() -> list[str]:
+  result = []
+  line = input()
+  while line:
+    result = result + [line]
     line = input()
-    while line:
-      result = result + [line]
-      line = input()
-    return result
+  return result
 ```
 
 ### Das Newton-Verfahren
@@ -623,12 +639,12 @@ und verwendet das Newton-Verfahren zur Berechnung einer Zahl x, sodass f(x) "nah
 
 #### Schritt 2: Funktionsgerüst
 ```{code-cell} ipython3
-  from pytest import approx
-  def newton(f: list[float], x0: float) -> float:
-    # fill in
-    while expr_cond:
-      pass # fill in
-    return
+from pytest import approx
+def newton(f: list[float], x0: float) -> float:
+  # fill in
+  while expr_cond:
+    pass # fill in
+  return
 ```
 
 $\textbf{Warum while?}$
@@ -642,33 +658,35 @@ Beispielfunktion: $f(x) = x^3 - 6x^2 + 11x - 6
 
 #### Schritt 3: Beispiele
 für p = [-6, 11, -6, 1] sollen:
-  - newton (p, 0)   == approx(1)
-  - newton (p, 1.1) == approx(1)
-  - newton (p, 1.7) == approx(2)
-  - newton (p, 2.5) == approx(1)
-  - newton (p, 2.7) == approx(3)
-  - newton (p, 10)  == approx(3)
+```python
+newton (p, 0)   == approx(1)
+newton (p, 1.1) == approx(1)
+newton (p, 1.7) == approx(2)
+newton (p, 2.5) == approx(1)
+newton (p, 2.7) == approx(3)
+newton (p, 10)  == approx(3)
+```
 
 #### Schritt 4: Funktionsdefinition
 ```{code-cell} ipython3
-  from pytest import approx
-  def newton(f: list[float], x0: float) -> float:
-    deriv_f = derivative(f)
-    xn = x0
-    while poly_eval(f, xn) != approx(0):
-      xn = xn -(poly_eval(f,xn) / poly_eval(deriv_f, xn))
-    return xn
+from pytest import approx
+def newton(f: list[float], x0: float) -> float:
+  deriv_f = derivative(f)
+  xn = x0
+  while poly_eval(f, xn) != approx(0):
+    xn = xn -(poly_eval(f,xn) / poly_eval(deriv_f, xn))
+  return xn
 ```
 
 #### Schritt 5: Testen
 ```{code-cell} ipython3
-  p = [-6, 11, -6, 1] 
-  assert newton (p, 0)   == approx(1)
-  assert newton (p, 1.1) == approx(1)
-  assert newton (p, 1.7) == approx(2)
-  assert newton (p, 2.5) == approx(1)
-  assert newton (p, 2.7) == approx(3)
-  assert newton (p, 10)  == approx(3)
+p = [-6, 11, -6, 1] 
+assert newton (p, 0)   == approx(1)
+assert newton (p, 1.1) == approx(1)
+assert newton (p, 1.7) == approx(2)
+assert newton (p, 2.5) == approx(1)
+assert newton (p, 2.7) == approx(3)
+assert newton (p, 10)  == approx(3)
 ```
 
 ### Das Collatz-Problem
@@ -679,20 +697,22 @@ Starte mit einer ganzen positiven Zhal $n$ und definiere eine Folge $n = a_0,a_1
 > $\textbf{Offene Frage: }$ 
 Für welche Startwerte $n$ gibt es ein $i$ mit $a_i = 1$?
 ##### Beispiele (Folge der durchlaufenen Zahlen)
-  - [3, 10, 5, 16, 8, 4, 2, 1]
-  - [7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+```python
+[3, 10, 5, 16, 8, 4, 2, 1]
+[7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+```
 
 #### Funktionsdefinition
 ```{code-cell} ipython3
-  def collatz(n: int) -> list[int]:
-    result = [n]
-    while n > 1:
-      if n % 2 == 0:
-        n = n // 2
-      else:
-        n = 3 * n + 1
-      result = result + [n]
-    return result
+def collatz(n: int) -> list[int]:
+  result = [n]
+  while n > 1:
+    if n % 2 == 0:
+      n = n // 2
+    else:
+      n = 3 * n + 1
+    result = result + [n]
+  return result
 ```
 
 $\textbf{Warum while?}$
@@ -733,12 +753,12 @@ $\textcolor{blue}{für\,ganze\,Zahlen}$
 
 ##### Implementierung Zweierlogarithmus
 ```{code-cell} ipython3
-  def l2(n:int) -> int:
-    m = -1
-    while n > 0:
-      m = m + 1
-      n = n // 2
-    return m
+def l2(n:int) -> int:
+  m = -1
+  while n > 0:
+    m = m + 1
+    n = n // 2
+  return m
 ```
 
 ##### Terminationsbedingung
