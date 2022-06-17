@@ -3,3 +3,4 @@ sphinx_revealjs
 matplotlib
 numpy
 jupytext
+pytest

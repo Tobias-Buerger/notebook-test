@@ -40,6 +40,7 @@ COPY --chown=user:user ./info1-book/requirements.txt /build/requirements.txt
 COPY --chown=user:user ./docker-files /build
 
 # install pip requirements for building the book
+RUN pip3.10 install --upgrade pip
 RUN pip3.10 install -r /build/requirements.txt
 
 # prepare Uni Freiburg specific tex files
